@@ -50,3 +50,4 @@ wandb/
 reports/figures/run_*/
 reports/figures/.last_hash
 sync.log
+.figures_hash
