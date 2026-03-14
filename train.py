@@ -24,7 +24,7 @@ from pathlib import Path
 # ============================================================
 
 # ---- Policy ----
-POLICY_TYPE = "diffusion"
+POLICY_TYPE = "act"
 
 # ---- Task ----
 DATASET_REPO_ID = "lerobot/aloha_sim_transfer_cube_human"
@@ -45,7 +45,7 @@ SAVE_FREQ = 10000
 TIME_BUDGET = 3600
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/diffusion_alohatransfercube_v0"
+OUTPUT_DIR = "outputs/act_alohatransfercube_v0"
 
 # ---- Policy-Specific Overrides ----
 POLICY_OVERRIDES = {}
