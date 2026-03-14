@@ -89,6 +89,8 @@ def build_command(smoke_test=False):
     cmd = [
         sys.executable, "-m", "lerobot.scripts.lerobot_train",
         f"--policy.type={POLICY_TYPE}",
+        f"--policy.repo_id=autoresearch-mrl/{POLICY_TYPE}_{ENV_TASK.lower().replace('-', '_')}",
+        f"--policy.push_to_hub=false",
         f"--dataset.repo_id={DATASET_REPO_ID}",
         f"--env.type={ENV_TYPE}",
         f"--env.task={ENV_TASK}",
