@@ -275,6 +275,20 @@ def git_reset_last():
     log("Reverted last commit (experiment discarded)")
 
 
+def _fix_last_result_status(new_status):
+    """Update the status of the last row in results.tsv."""
+    if not RESULTS_FILE.exists():
+        return
+    lines = RESULTS_FILE.read_text().strip().split("\n")
+    if len(lines) < 2:
+        return
+    parts = lines[-1].split("\t")
+    if len(parts) >= 9:
+        parts[8] = new_status  # status column
+        lines[-1] = "\t".join(parts)
+        RESULTS_FILE.write_text("\n".join(lines) + "\n")
+
+
 def get_gpu_vram_gb():
     """Get current GPU memory usage in GB."""
     try:
@@ -368,7 +382,8 @@ EXTRA_ARGS = {extra_str}
 
 def run_experiment(policy, task_id, description, status_type,
                    policy_overrides=None, optimizer_overrides=None,
-                   batch_size=None, seed=1000, dry_run=False):
+                   batch_size=None, seed=1000, extra_args=None,
+                   dry_run=False):
     """
     Run a single experiment:
     1. Write config to train.py
@@ -389,6 +404,7 @@ def run_experiment(policy, task_id, description, status_type,
         optimizer_overrides=optimizer_overrides,
         batch_size=batch_size,
         seed=seed,
+        extra_args=extra_args,
     )
 
     if dry_run:
@@ -410,6 +426,11 @@ def run_experiment(policy, task_id, description, status_type,
     start_time = time.time()
     timeout = task.time_budget * 2 + 300  # 2x budget + 5 min grace
 
+    # Set up environment with MUJOCO_GL for headless rendering
+    env = os.environ.copy()
+    env["MUJOCO_GL"] = "egl"
+    env["WANDB_MODE"] = "disabled"
+
     try:
         with open(LOG_FILE, "w") as log_file:
             proc = subprocess.Popen(
@@ -417,6 +438,7 @@ def run_experiment(policy, task_id, description, status_type,
                 stdout=log_file,
                 stderr=subprocess.STDOUT,
                 cwd=REPO_DIR,
+                env=env,
                 preexec_fn=os.setsid if hasattr(os, "setsid") else None,
             )
             proc.wait(timeout=timeout)
@@ -654,11 +676,12 @@ def optimize_pair(policy, task_id, dry_run=False):
             if bs_match:
                 batch_size = int(bs_match.group(1))
 
+        # For Phase 2, we determine keep/discard AFTER the run
         success_rate, commit = run_experiment(
             policy=policy,
             task_id=task_id,
             description=full_desc,
-            status_type="opt",
+            status_type="keep",  # Tentatively "keep" — we'll fix if discarding
             policy_overrides=policy_ovr if policy_ovr else None,
             optimizer_overrides=optim_ovr if optim_ovr else None,
             batch_size=batch_size,
@@ -669,18 +692,18 @@ def optimize_pair(policy, task_id, dry_run=False):
             continue
 
         if success_rate > current_best:
-            log(f"IMPROVEMENT: {current_best:.1f}% → {success_rate:.1f}% (+{success_rate - current_best:.1f}%)")
+            log(f"IMPROVEMENT: {current_best:.1f}% -> {success_rate:.1f}% (+{success_rate - current_best:.1f}%)")
             current_best = success_rate
             consecutive_discards = 0
-            # Update status in results (already recorded as "opt", keep the commit)
+            # Status was already recorded as "keep" — correct
         else:
             log(f"No improvement: {success_rate:.1f}% vs best {current_best:.1f}%")
             consecutive_discards += 1
             # Revert the commit
             if commit != "dry_run":
                 git_reset_last()
-            # Update status to discard — re-record
-            # (The result was already recorded with status "opt", update it)
+            # Fix status from "keep" to "discard" in results.tsv
+            _fix_last_result_status("discard")
 
     log(f"Optimization complete for {policy}/{task_id}. Best: {current_best:.1f}%")
 
@@ -701,7 +724,7 @@ def generate_optimization_report():
 
     for policy, task_id in BASELINE_EXPERIMENTS:
         baseline = [r for r in results if r["policy"] == policy and r["task"] == task_id and r["status"] == "baseline"]
-        kept = [r for r in results if r["policy"] == policy and r["task"] == task_id and r["status"] == "keep"]
+        kept = [r for r in results if r["policy"] == policy and r["task"] == task_id and r["status"] in ("keep", "opt")]
 
         if not baseline:
             continue
@@ -771,22 +794,22 @@ def run_ablation_data_efficiency(dry_run=False):
         if not has_baseline(policy, "PushT-v0"):
             continue
 
-        task = TASKS["PushT-v0"]
         total_episodes = 206  # PushT dataset size
 
         for fraction in DATA_FRACTIONS:
             n_episodes = max(1, int(total_episodes * fraction))
             desc = f"data_efficiency {int(fraction*100)}% ({n_episodes} episodes)"
 
-            episode_list = list(range(n_episodes))
-            extra_args = [f"--dataset.episodes={json.dumps(episode_list)}"] if fraction < 1.0 else []
+            # Build episode list for subset training
+            episode_indices = list(range(n_episodes))
+            extra = [f"--dataset.episodes={json.dumps(episode_indices)}"] if fraction < 1.0 else []
 
             run_experiment(
                 policy=policy,
                 task_id="PushT-v0",
                 description=desc,
                 status_type="ablation",
-                extra_args=extra_args if extra_args else None,
+                extra_args=extra if extra else None,
                 dry_run=dry_run,
             )
 
