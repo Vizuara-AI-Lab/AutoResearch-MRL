@@ -1,18 +1,18 @@
 # AutoResearch-MRL: Live Results
 
-> Last updated: **2026-03-14 08:39 UTC** | auto-generated every 5 min
+> Last updated: **2026-03-14 08:46 UTC** | auto-generated every 5 min
 
 ## Summary
 
 | Metric | Value |
 |--------|-------|
-| **Current Phase** | Phase 1: Baselines (4/9) |
-| Total experiments | 4 |
-| Baselines complete | 4 / 9 |
+| **Current Phase** | Phase 1: Baselines (5/9) |
+| Total experiments | 5 |
+| Baselines complete | 5 / 9 |
 | Improvements kept | 0 |
 | Discarded | 0 |
 | Crashes | 0 |
-| Total GPU time | 170 min (2.8 hrs) |
+| Total GPU time | 236 min (3.9 hrs) |
 
 ## Policy Comparison
 
@@ -26,6 +26,7 @@
 | act | PushT-v0 | 0.0% | 25.8 | 0.0 | 35 | 16922 |
 | vqbet | PushT-v0 | 0.0% | 1.9 | 0.0 | 35 | 25970 |
 | diffusion | AlohaTransferCube-v0 | 2.0% | 29.4 | 0.0 | 65 | 10682 |
+| act | AlohaTransferCube-v0 | 22.0% | 94.2 | 0.0 | 65 | 15213 |
 
 ## Training Efficiency
 
@@ -46,6 +47,7 @@
 | 2 | `814f618` | act | PushT-v0 | 0.0% | 25.8 | baseline | default act on PushT-v0 |
 | 3 | `5dcae14` | vqbet | PushT-v0 | 0.0% | 1.9 | baseline | default vqbet on PushT-v0 |
 | 4 | `7fb27b8` | diffusion | AlohaTransferCube-v0 | 2.0% | 29.4 | baseline | default diffusion on AlohaTransferCube-v0 |
+| 5 | `ee4f0ea` | act | AlohaTransferCube-v0 | 22.0% | 94.2 | baseline | default act on AlohaTransferCube-v0 |
 
 </details>
 
