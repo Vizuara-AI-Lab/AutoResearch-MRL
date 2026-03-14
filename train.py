@@ -24,7 +24,7 @@ from pathlib import Path
 # ============================================================
 
 # ---- Policy ----
-POLICY_TYPE = "act"
+POLICY_TYPE = "vqbet"
 
 # ---- Task ----
 DATASET_REPO_ID = "lerobot/pusht"
@@ -45,7 +45,7 @@ SAVE_FREQ = 10000
 TIME_BUDGET = 1800
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/act_pusht_v0"
+OUTPUT_DIR = "outputs/vqbet_pusht_v0"
 
 # ---- Policy-Specific Overrides ----
 POLICY_OVERRIDES = {}
