@@ -83,6 +83,7 @@ def build_command(smoke_test=False):
     """Construct the lerobot-train CLI command from configuration."""
     steps = 100 if smoke_test else TRAINING_STEPS
     eval_freq = 50 if smoke_test else EVAL_FREQ
+    eval_episodes = 5 if smoke_test else EVAL_N_EPISODES
     save_freq = steps if smoke_test else SAVE_FREQ
     output_dir = "outputs/smoke_test" if smoke_test else OUTPUT_DIR
 
@@ -97,7 +98,7 @@ def build_command(smoke_test=False):
         f"--steps={steps}",
         f"--batch_size={BATCH_SIZE}",
         f"--eval_freq={eval_freq}",
-        f"--eval.n_episodes={EVAL_N_EPISODES}",
+        f"--eval.n_episodes={eval_episodes}",
         f"--save_freq={save_freq}",
         f"--output_dir={output_dir}",
         f"--seed={SEED}",
@@ -178,8 +179,8 @@ def get_gpu_memory():
 def run_training(smoke_test=False):
     """Run the training and report results."""
     cmd = build_command(smoke_test=smoke_test)
-    budget = 120 if smoke_test else TIME_BUDGET
-    timeout = budget + 120  # Grace period for startup/compilation/eval
+    budget = 300 if smoke_test else TIME_BUDGET
+    timeout = budget + 300  # Grace period for startup/compilation/eval
 
     # Print experiment header
     print("=" * 60)
