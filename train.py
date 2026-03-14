@@ -99,6 +99,7 @@ def build_command(smoke_test=False):
         f"--batch_size={BATCH_SIZE}",
         f"--eval_freq={eval_freq}",
         f"--eval.n_episodes={eval_episodes}",
+        f"--eval.batch_size={eval_episodes}",
         f"--save_freq={save_freq}",
         f"--output_dir={output_dir}",
         f"--seed={SEED}",
