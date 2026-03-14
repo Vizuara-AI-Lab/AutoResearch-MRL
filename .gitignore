@@ -1,0 +1,47 @@
+# Experiment logs — local only, not committed
+results.tsv
+run.log
+eval.log
+
+# Training outputs — too large for git
+outputs/
+eval_videos/
+checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment
+.env
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Agent configs (user-specific)
+CLAUDE.md
+AGENTS.md
+
+# Weights & Biases
+wandb/
+
+# HuggingFace cache (use system cache instead)
+.cache/
