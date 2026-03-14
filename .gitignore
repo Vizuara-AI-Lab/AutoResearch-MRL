@@ -1,7 +1,9 @@
 # Experiment logs — local only, not committed
 results.tsv
 run.log
+wrapper.log
 eval.log
+autoresearch.log
 
 # Training outputs — too large for git
 outputs/

@@ -431,11 +431,17 @@ def run_experiment(policy, task_id, description, status_type,
     env["MUJOCO_GL"] = "egl"
     env["WANDB_MODE"] = "disabled"
 
+    # IMPORTANT: Do NOT redirect train.py stdout to run.log here.
+    # train.py internally redirects the lerobot subprocess to run.log.
+    # If we also redirect here, both processes fight over the same file.
+    # Instead, capture train.py's stdout separately.
+    wrapper_log = REPO_DIR / "wrapper.log"
+
     try:
-        with open(LOG_FILE, "w") as log_file:
+        with open(wrapper_log, "w") as wlog:
             proc = subprocess.Popen(
                 [sys.executable, str(TRAIN_SCRIPT)],
-                stdout=log_file,
+                stdout=wlog,
                 stderr=subprocess.STDOUT,
                 cwd=REPO_DIR,
                 env=env,
@@ -469,10 +475,17 @@ def run_experiment(policy, task_id, description, status_type,
         "steps_completed": 0,
     }
 
+    # Read both log files: run.log (lerobot output) and wrapper.log (train.py output)
+    combined_log = ""
     if LOG_FILE.exists():
-        log_text = LOG_FILE.read_text()
+        combined_log += LOG_FILE.read_text()
+    if wrapper_log.exists():
+        combined_log += "\n" + wrapper_log.read_text()
 
-        # Success rate
+    if combined_log:
+        log_text = combined_log
+
+        # Success rate (check train.py format first, then lerobot format)
         matches = re.findall(r"success_rate:\s+([0-9.]+)", log_text)
         if not matches:
             matches = re.findall(r"pc_success[:\s]+([0-9.]+)", log_text)
@@ -506,13 +519,14 @@ def run_experiment(policy, task_id, description, status_type,
 
     # Check if training crashed (no success rate)
     if metrics["success_rate"] == 0.0 and metrics["steps_completed"] == 0:
-        log(f"CRASH: No metrics found. Check run.log", "ERROR")
-        # Print last 20 lines of log for debugging
-        if LOG_FILE.exists():
-            lines = LOG_FILE.read_text().strip().split("\n")
-            log(f"Last 20 lines of run.log:")
-            for line in lines[-20:]:
-                print(f"  | {line}")
+        log(f"CRASH: No metrics found. Check run.log and wrapper.log", "ERROR")
+        # Print last 30 lines of both logs for debugging
+        for lf in [LOG_FILE, wrapper_log]:
+            if lf.exists() and lf.read_text().strip():
+                lines = lf.read_text().strip().split("\n")
+                log(f"Last 20 lines of {lf.name}:")
+                for line in lines[-20:]:
+                    print(f"  | {line}")
 
         append_result(commit_hash, policy, task_id, 0.0, 0.0, 0.0,
                       elapsed / 60, 0, "crash", description)
