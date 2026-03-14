@@ -47,3 +47,6 @@ wandb/
 
 # HuggingFace cache (use system cache instead)
 .cache/
+reports/figures/run_*/
+reports/figures/.last_hash
+sync.log
