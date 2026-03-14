@@ -32,48 +32,32 @@ ENV_TYPE = "pusht"
 ENV_TASK = "PushT-v0"
 
 # ---- Training ----
-TRAINING_STEPS = 50_000
+TRAINING_STEPS = 50000
 BATCH_SIZE = 64
 SEED = 1000
 
 # ---- Evaluation ----
-EVAL_FREQ = 10_000
+EVAL_FREQ = 10000
 EVAL_N_EPISODES = 50
-SAVE_FREQ = 10_000
+SAVE_FREQ = 10000
 
 # ---- Time Budget (seconds) ----
-TIME_BUDGET = 1800  # 30 minutes
+TIME_BUDGET = 1800
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/current"
+OUTPUT_DIR = "outputs/diffusion_pusht_v0"
 
 # ---- Policy-Specific Overrides ----
-# These are passed as --policy.<key>=<value> to lerobot-train.
-# Examples:
-#   "n_obs_steps": 2,
-#   "horizon": 16,
-#   "n_action_steps": 8,
-#   "vision_backbone": "resnet18",
-#   "down_dims": "[512,1024,2048]",
 POLICY_OVERRIDES = {}
 
 # ---- Optimizer Overrides ----
-# These are passed as --optimizer.<key>=<value> to lerobot-train.
-# Examples:
-#   "lr": 1e-4,
-#   "weight_decay": 1e-4,
-#   "grad_clip_norm": 1.0,
 OPTIMIZER_OVERRIDES = {}
 
 # ---- Scheduler Overrides ----
-# These are passed as --scheduler.<key>=<value> to lerobot-train.
 SCHEDULER_OVERRIDES = {}
 
 # ---- Extra CLI Arguments ----
-# Arbitrary extra arguments appended to the command.
-# Example: ["--num_workers=8", "--wandb.enable=true"]
 EXTRA_ARGS = []
-
 
 # ============================================================
 # INFRASTRUCTURE — Do not modify below this line
