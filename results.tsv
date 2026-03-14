@@ -5,3 +5,4 @@ c7275a1	diffusion	PushT-v0	6.00	47.307	0.0	35.1	28405	baseline	default diffusion
 7fb27b8	diffusion	AlohaTransferCube-v0	2.00	29.360	0.0	65.1	10682	baseline	default diffusion on AlohaTransferCube-v0
 ee4f0ea	act	AlohaTransferCube-v0	22.00	94.200	0.0	65.1	15213	baseline	default act on AlohaTransferCube-v0
 5bf4180	vqbet	AlohaTransferCube-v0	0.00	0.000	0.0	65.1	7570	baseline	default vqbet on AlohaTransferCube-v0
+4083c68	diffusion	AlohaInsertion-v0	0.00	6.340	0.0	65.1	11018	baseline	default diffusion on AlohaInsertion-v0
