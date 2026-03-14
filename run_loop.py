@@ -486,16 +486,17 @@ def run_experiment(policy, task_id, description, status_type,
         log_text = combined_log
 
         # Success rate (check train.py format first, then lerobot format)
+        # LeRobot format: 'pc_success': 0.0
         matches = re.findall(r"success_rate:\s+([0-9.]+)", log_text)
         if not matches:
-            matches = re.findall(r"pc_success[:\s]+([0-9.]+)", log_text)
+            matches = re.findall(r"'?pc_success'?[:\s]+([0-9.]+)", log_text)
         if matches:
             metrics["success_rate"] = float(matches[-1])
 
         # Avg reward
         matches = re.findall(r"avg_reward:\s+([0-9.]+)", log_text)
         if not matches:
-            matches = re.findall(r"avg_sum_reward[:\s]+([0-9.]+)", log_text)
+            matches = re.findall(r"'?avg_sum_reward'?[:\s]+([0-9.]+)", log_text)
         if matches:
             metrics["avg_reward"] = float(matches[-1])
 

@@ -134,12 +134,14 @@ def extract_metrics(log_path):
         log_text = f.read()
 
     # Extract last evaluation success rate (pc_success)
-    success_matches = re.findall(r"pc_success[:\s]+([0-9.]+)", log_text)
+    # Format in LeRobot logs: 'pc_success': 0.0  or  pc_success: 0.0
+    success_matches = re.findall(r"'?pc_success'?[:\s]+([0-9.]+)", log_text)
     if success_matches:
         metrics["success_rate"] = float(success_matches[-1])
 
     # Extract last avg_sum_reward
-    reward_matches = re.findall(r"avg_sum_reward[:\s]+([0-9.]+)", log_text)
+    # Format: 'avg_sum_reward': 4.924  or  avg_sum_reward: 4.924
+    reward_matches = re.findall(r"'?avg_sum_reward'?[:\s]+([0-9.]+)", log_text)
     if reward_matches:
         metrics["avg_reward"] = float(reward_matches[-1])
 
@@ -148,10 +150,15 @@ def extract_metrics(log_path):
     if loss_matches:
         metrics["final_loss"] = float(loss_matches[-1])
 
-    # Extract step count
-    step_matches = re.findall(r"step[:\s]+(\d+)", log_text)
+    # Extract step count — look for tqdm "Training: 100%|...| 100/100"
+    # or LeRobot INFO logs
+    step_matches = re.findall(r"Training:.*\|\s*(\d+)/\d+", log_text)
     if step_matches:
         metrics["steps_completed"] = int(step_matches[-1])
+    else:
+        step_matches = re.findall(r"step[:\s]+(\d+)", log_text)
+        if step_matches:
+            metrics["steps_completed"] = int(step_matches[-1])
 
     # Extract peak VRAM if reported
     vram_matches = re.findall(r"peak_vram_mb[:\s]+([0-9.]+)", log_text)
