@@ -1,3 +1,4 @@
 commit	policy	task	success_rate	avg_reward	vram_gb	training_min	steps	status	description
 c7275a1	diffusion	PushT-v0	6.00	47.307	0.0	35.1	28405	baseline	default diffusion on PushT-v0
 814f618	act	PushT-v0	0.00	25.836	0.0	35.1	16922	baseline	default act on PushT-v0
+5dcae14	vqbet	PushT-v0	0.00	1.909	0.0	35.1	25970	baseline	default vqbet on PushT-v0
