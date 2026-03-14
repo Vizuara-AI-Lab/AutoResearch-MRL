@@ -24,12 +24,12 @@ from pathlib import Path
 # ============================================================
 
 # ---- Policy ----
-POLICY_TYPE = "vqbet"
+POLICY_TYPE = "diffusion"
 
 # ---- Task ----
-DATASET_REPO_ID = "lerobot/aloha_sim_transfer_cube_human"
+DATASET_REPO_ID = "lerobot/aloha_sim_insertion_human"
 ENV_TYPE = "aloha"
-ENV_TASK = "AlohaTransferCube-v0"
+ENV_TASK = "AlohaInsertion-v0"
 
 # ---- Training ----
 TRAINING_STEPS = 100000
@@ -45,7 +45,7 @@ SAVE_FREQ = 10000
 TIME_BUDGET = 3600
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/vqbet_alohatransfercube_v0"
+OUTPUT_DIR = "outputs/diffusion_alohainsertion_v0"
 
 # ---- Policy-Specific Overrides ----
 POLICY_OVERRIDES = {}
