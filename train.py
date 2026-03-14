@@ -24,15 +24,15 @@ from pathlib import Path
 # ============================================================
 
 # ---- Policy ----
-POLICY_TYPE = "vqbet"
+POLICY_TYPE = "diffusion"
 
 # ---- Task ----
-DATASET_REPO_ID = "lerobot/pusht"
-ENV_TYPE = "pusht"
-ENV_TASK = "PushT-v0"
+DATASET_REPO_ID = "lerobot/aloha_sim_transfer_cube_human"
+ENV_TYPE = "aloha"
+ENV_TASK = "AlohaTransferCube-v0"
 
 # ---- Training ----
-TRAINING_STEPS = 50000
+TRAINING_STEPS = 100000
 BATCH_SIZE = 64
 SEED = 1000
 
@@ -42,10 +42,10 @@ EVAL_N_EPISODES = 50
 SAVE_FREQ = 10000
 
 # ---- Time Budget (seconds) ----
-TIME_BUDGET = 1800
+TIME_BUDGET = 3600
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/vqbet_pusht_v0"
+OUTPUT_DIR = "outputs/diffusion_alohatransfercube_v0"
 
 # ---- Policy-Specific Overrides ----
 POLICY_OVERRIDES = {}
