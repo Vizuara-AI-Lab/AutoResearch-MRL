@@ -1,18 +1,18 @@
 # AutoResearch-MRL: Live Results
 
-> Last updated: **2026-03-15 16:53 UTC** | auto-generated every 5 min
+> Last updated: **2026-03-15 17:00 UTC** | auto-generated every 5 min
 
 ## Summary
 
 | Metric | Value |
 |--------|-------|
-| **Current Phase** | Phase 1: Baselines (8/9) |
-| Total experiments | 8 |
-| Baselines complete | 8 / 9 |
+| **Current Phase** | Phase 2: Optimization (baselines complete) |
+| Total experiments | 9 |
+| Baselines complete | 9 / 9 |
 | Improvements kept | 0 |
 | Discarded | 0 |
 | Crashes | 0 |
-| Total GPU time | 431 min (7.2 hrs) |
+| Total GPU time | 496 min (8.3 hrs) |
 
 ## Policy Comparison
 
@@ -30,6 +30,7 @@
 | vqbet | AlohaTransferCube-v0 | 0.0% | 0.0 | 0.0 | 65 | 7570 |
 | diffusion | AlohaInsertion-v0 | 0.0% | 6.3 | 0.0 | 65 | 11018 |
 | act | AlohaInsertion-v0 | 4.0% | 116.0 | 0.0 | 65 | 15616 |
+| vqbet | AlohaInsertion-v0 | 0.0% | 0.0 | 0.0 | 65 | 7914 |
 
 ## Training Efficiency
 
@@ -54,6 +55,7 @@
 | 6 | `5bf4180` | vqbet | AlohaTransferCube-v0 | 0.0% | 0.0 | baseline | default vqbet on AlohaTransferCube-v0 |
 | 7 | `4083c68` | diffusion | AlohaInsertion-v0 | 0.0% | 6.3 | baseline | default diffusion on AlohaInsertion-v0 |
 | 8 | `f0cd1ec` | act | AlohaInsertion-v0 | 4.0% | 116.0 | baseline | default act on AlohaInsertion-v0 |
+| 9 | `bf9ea9a` | vqbet | AlohaInsertion-v0 | 0.0% | 0.0 | baseline | default vqbet on AlohaInsertion-v0 |
 
 </details>
 
