@@ -24,7 +24,7 @@ from pathlib import Path
 # ============================================================
 
 # ---- Policy ----
-POLICY_TYPE = "diffusion"
+POLICY_TYPE = "act"
 
 # ---- Task ----
 DATASET_REPO_ID = "lerobot/pusht"
@@ -45,13 +45,13 @@ SAVE_FREQ = 10000
 TIME_BUDGET = 1800
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/diffusion_pusht_v0_20260315_213725"
+OUTPUT_DIR = "outputs/act_pusht_v0_20260315_221230"
 
 # ---- Policy-Specific Overrides ----
-POLICY_OVERRIDES = {'horizon': 32, 'n_action_steps': 16}
+POLICY_OVERRIDES = {}
 
 # ---- Optimizer Overrides ----
-OPTIMIZER_OVERRIDES = {}
+OPTIMIZER_OVERRIDES = {'lr': 0.0001}
 
 # ---- Scheduler Overrides ----
 SCHEDULER_OVERRIDES = {}
