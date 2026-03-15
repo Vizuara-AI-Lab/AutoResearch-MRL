@@ -1,18 +1,18 @@
 # AutoResearch-MRL: Live Results
 
-> Last updated: **2026-03-15 17:31 UTC** | auto-generated every 5 min
+> Last updated: **2026-03-15 17:38 UTC** | auto-generated every 5 min
 
 ## Summary
 
 | Metric | Value |
 |--------|-------|
-| **Current Phase** | Phase 2: Optimization (baselines complete) |
-| Total experiments | 9 |
+| **Current Phase** | Phase 2: Optimization |
+| Total experiments | 10 |
 | Baselines complete | 9 / 9 |
-| Improvements kept | 0 |
+| Improvements kept | 1 |
 | Discarded | 0 |
 | Crashes | 0 |
-| Total GPU time | 496 min (8.3 hrs) |
+| Total GPU time | 531 min (8.8 hrs) |
 
 ## Policy Comparison
 
@@ -36,6 +36,22 @@
 
 ![Training Efficiency](reports/figures/training_efficiency.png)
 
+## Optimization Results
+
+![Optimization Gains](reports/figures/optimization_gains.png)
+
+| Policy | Task | Best Success Rate | Improvement | Description |
+|--------|------|:-----------------:|:-----------:|-------------|
+| act | AlohaInsertion-v0 | 4.0% | baseline | default act on AlohaInsertion-v0 |
+| act | AlohaTransferCube-v0 | 22.0% | baseline | default act on AlohaTransferCube-v0 |
+| act | PushT-v0 | 0.0% | baseline | default act on PushT-v0 |
+| diffusion | AlohaInsertion-v0 | 0.0% | baseline | default diffusion on AlohaInsertion-v0 |
+| diffusion | AlohaTransferCube-v0 | 2.0% | baseline | default diffusion on AlohaTransferCube-v0 |
+| diffusion | PushT-v0 | 10.0% | +4.0pp | lr=5e-5 |
+| vqbet | AlohaInsertion-v0 | 0.0% | baseline | default vqbet on AlohaInsertion-v0 |
+| vqbet | AlohaTransferCube-v0 | 0.0% | baseline | default vqbet on AlohaTransferCube-v0 |
+| vqbet | PushT-v0 | 0.0% | baseline | default vqbet on PushT-v0 |
+
 ## Experiment Progress
 
 ![Experiment Progress](reports/figures/experiment_progress.png)
@@ -56,6 +72,7 @@
 | 7 | `4083c68` | diffusion | AlohaInsertion-v0 | 0.0% | 6.3 | baseline | default diffusion on AlohaInsertion-v0 |
 | 8 | `f0cd1ec` | act | AlohaInsertion-v0 | 4.0% | 116.0 | baseline | default act on AlohaInsertion-v0 |
 | 9 | `bf9ea9a` | vqbet | AlohaInsertion-v0 | 0.0% | 0.0 | baseline | default vqbet on AlohaInsertion-v0 |
+| 10 | `02f0c05` | diffusion | PushT-v0 | 10.0% | 39.5 | **KEEP** | lr=5e-5 |
 
 </details>
 

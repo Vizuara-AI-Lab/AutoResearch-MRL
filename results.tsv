@@ -8,3 +8,4 @@ ee4f0ea	act	AlohaTransferCube-v0	22.00	94.200	0.0	65.1	15213	baseline	default ac
 4083c68	diffusion	AlohaInsertion-v0	0.00	6.340	0.0	65.1	11018	baseline	default diffusion on AlohaInsertion-v0
 f0cd1ec	act	AlohaInsertion-v0	4.00	116.000	0.0	65.1	15616	baseline	default act on AlohaInsertion-v0
 bf9ea9a	vqbet	AlohaInsertion-v0	0.00	0.000	0.0	65.1	7914	baseline	default vqbet on AlohaInsertion-v0
+02f0c05	diffusion	PushT-v0	10.00	39.464	0.0	35.1	28061	keep	lr=5e-5
