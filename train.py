@@ -45,13 +45,13 @@ SAVE_FREQ = 10000
 TIME_BUDGET = 1800
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/act_pusht_v0_20260315_232241"
+OUTPUT_DIR = "outputs/act_pusht_v0_20260315_235746"
 
 # ---- Policy-Specific Overrides ----
-POLICY_OVERRIDES = {}
+POLICY_OVERRIDES = {'chunk_size': 50, 'n_action_steps': 50}
 
 # ---- Optimizer Overrides ----
-OPTIMIZER_OVERRIDES = {'lr': 0.001}
+OPTIMIZER_OVERRIDES = {}
 
 # ---- Scheduler Overrides ----
 SCHEDULER_OVERRIDES = {}
