@@ -317,6 +317,8 @@ def write_train_config(policy, task_id, policy_overrides=None,
     task = TASKS[task_id]
     bs = batch_size or task.batch_size
 
+    task_id_safe = task_id.replace("-", "_").lower()
+    run_ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     policy_ovr_str = repr(policy_overrides or {})
     optim_ovr_str = repr(optimizer_overrides or {})
     extra_str = repr(extra_args or [])
@@ -347,7 +349,7 @@ SAVE_FREQ = {task.save_freq}
 TIME_BUDGET = {task.time_budget}
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/{policy}_{task_id.replace("-", "_").lower()}"
+OUTPUT_DIR = "outputs/{policy}_{task_id_safe}_{run_ts}"
 
 # ---- Policy-Specific Overrides ----
 POLICY_OVERRIDES = {policy_ovr_str}
