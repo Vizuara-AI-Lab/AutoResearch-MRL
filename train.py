@@ -45,13 +45,13 @@ SAVE_FREQ = 10000
 TIME_BUDGET = 1800
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/diffusion_pusht_v0_20260315_165642"
+OUTPUT_DIR = "outputs/diffusion_pusht_v0_20260315_173147"
 
 # ---- Policy-Specific Overrides ----
 POLICY_OVERRIDES = {}
 
 # ---- Optimizer Overrides ----
-OPTIMIZER_OVERRIDES = {'lr': 5e-05}
+OPTIMIZER_OVERRIDES = {'lr': 0.0005}
 
 # ---- Scheduler Overrides ----
 SCHEDULER_OVERRIDES = {}
