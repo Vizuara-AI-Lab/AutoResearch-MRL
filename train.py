@@ -24,15 +24,15 @@ from pathlib import Path
 # ============================================================
 
 # ---- Policy ----
-POLICY_TYPE = "vqbet"
+POLICY_TYPE = "diffusion"
 
 # ---- Task ----
-DATASET_REPO_ID = "lerobot/aloha_sim_insertion_human"
-ENV_TYPE = "aloha"
-ENV_TASK = "AlohaInsertion-v0"
+DATASET_REPO_ID = "lerobot/pusht"
+ENV_TYPE = "pusht"
+ENV_TASK = "PushT-v0"
 
 # ---- Training ----
-TRAINING_STEPS = 100000
+TRAINING_STEPS = 50000
 BATCH_SIZE = 64
 SEED = 1000
 
@@ -42,16 +42,16 @@ EVAL_N_EPISODES = 50
 SAVE_FREQ = 10000
 
 # ---- Time Budget (seconds) ----
-TIME_BUDGET = 3600
+TIME_BUDGET = 1800
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/vqbet_alohainsertion_v0_20260315_155137"
+OUTPUT_DIR = "outputs/diffusion_pusht_v0_20260315_165642"
 
 # ---- Policy-Specific Overrides ----
 POLICY_OVERRIDES = {}
 
 # ---- Optimizer Overrides ----
-OPTIMIZER_OVERRIDES = {}
+OPTIMIZER_OVERRIDES = {'lr': 5e-05}
 
 # ---- Scheduler Overrides ----
 SCHEDULER_OVERRIDES = {}
