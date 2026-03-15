@@ -1,6 +1,6 @@
 # AutoResearch-MRL: Live Results
 
-> Last updated: **2026-03-15 18:36 UTC** | auto-generated every 5 min
+> Last updated: **2026-03-15 18:49 UTC** | auto-generated every 5 min
 
 ## Summary
 
@@ -9,8 +9,8 @@
 | **Current Phase** | Phase 2: Optimization |
 | Total experiments | 11 |
 | Baselines complete | 9 / 9 |
-| Improvements kept | 2 |
-| Discarded | 0 |
+| Improvements kept | 1 |
+| Discarded | 1 |
 | Crashes | 0 |
 | Total GPU time | 566 min (9.4 hrs) |
 
@@ -73,7 +73,7 @@
 | 8 | `f0cd1ec` | act | AlohaInsertion-v0 | 4.0% | 116.0 | baseline | default act on AlohaInsertion-v0 |
 | 9 | `bf9ea9a` | vqbet | AlohaInsertion-v0 | 0.0% | 0.0 | baseline | default vqbet on AlohaInsertion-v0 |
 | 10 | `02f0c05` | diffusion | PushT-v0 | 10.0% | 39.5 | **KEEP** | lr=5e-5 |
-| 11 | `dde6bcb` | diffusion | PushT-v0 | 12.0% | 47.1 | **KEEP** | lr=5e-4 |
+| 11 | `dde6bcb` | diffusion | PushT-v0 | 12.0% | 47.1 | discard | lr=5e-4 |
 
 </details>
 
