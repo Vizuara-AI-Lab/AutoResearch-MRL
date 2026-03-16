@@ -45,10 +45,10 @@ SAVE_FREQ = 10000
 TIME_BUDGET = 1800
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/act_pusht_v0_20260316_014303"
+OUTPUT_DIR = "outputs/act_pusht_v0_20260316_021808"
 
 # ---- Policy-Specific Overrides ----
-POLICY_OVERRIDES = {'dim_model': 768}
+POLICY_OVERRIDES = {'n_encoder_layers': 6}
 
 # ---- Optimizer Overrides ----
 OPTIMIZER_OVERRIDES = {}
