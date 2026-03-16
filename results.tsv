@@ -11,3 +11,4 @@ bf9ea9a	vqbet	AlohaInsertion-v0	0.00	0.000	0.0	65.1	7914	baseline	default vqbet 
 02f0c05	diffusion	PushT-v0	10.00	39.464	0.0	35.1	28061	keep	lr=5e-5
 dde6bcb	diffusion	PushT-v0	12.00	47.113	0.0	35.1	28369	discard	lr=5e-4
 a545da1	diffusion	PushT-v0	24.00	61.058	0.0	35.1	33215	discard	batch_size=32
+b3328dd	act	PushT-v0	2.00	28.735	0.0	35.1	17103	keep	lr=1e-3

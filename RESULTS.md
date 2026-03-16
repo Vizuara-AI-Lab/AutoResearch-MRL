@@ -1,18 +1,18 @@
 # AutoResearch-MRL: Live Results
 
-> Last updated: **2026-03-15 23:55 UTC** | auto-generated every 5 min
+> Last updated: **2026-03-16 00:03 UTC** | auto-generated every 5 min
 
 ## Summary
 
 | Metric | Value |
 |--------|-------|
 | **Current Phase** | Phase 2: Optimization |
-| Total experiments | 12 |
+| Total experiments | 13 |
 | Baselines complete | 9 / 9 |
-| Improvements kept | 1 |
+| Improvements kept | 2 |
 | Discarded | 2 |
 | Crashes | 0 |
-| Total GPU time | 601 min (10.0 hrs) |
+| Total GPU time | 636 min (10.6 hrs) |
 
 ## Policy Comparison
 
@@ -44,7 +44,7 @@
 |--------|------|:-----------------:|:-----------:|-------------|
 | act | AlohaInsertion-v0 | 4.0% | baseline | default act on AlohaInsertion-v0 |
 | act | AlohaTransferCube-v0 | 22.0% | baseline | default act on AlohaTransferCube-v0 |
-| act | PushT-v0 | 0.0% | baseline | default act on PushT-v0 |
+| act | PushT-v0 | 2.0% | +2.0pp | lr=1e-3 |
 | diffusion | AlohaInsertion-v0 | 0.0% | baseline | default diffusion on AlohaInsertion-v0 |
 | diffusion | AlohaTransferCube-v0 | 2.0% | baseline | default diffusion on AlohaTransferCube-v0 |
 | diffusion | PushT-v0 | 24.0% | +18.0pp | batch_size=32 |
@@ -75,6 +75,7 @@
 | 10 | `02f0c05` | diffusion | PushT-v0 | 10.0% | 39.5 | **KEEP** | lr=5e-5 |
 | 11 | `dde6bcb` | diffusion | PushT-v0 | 12.0% | 47.1 | discard | lr=5e-4 |
 | 12 | `a545da1` | diffusion | PushT-v0 | 24.0% | 61.1 | discard | batch_size=32 |
+| 13 | `b3328dd` | act | PushT-v0 | 2.0% | 28.7 | **KEEP** | lr=1e-3 |
 
 </details>
 
