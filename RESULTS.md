@@ -1,6 +1,6 @@
 # AutoResearch-MRL: Live Results
 
-> Last updated: **2026-03-16 00:23 UTC** | auto-generated every 5 min
+> Last updated: **2026-03-16 00:36 UTC** | auto-generated every 5 min
 
 ## Summary
 
@@ -9,8 +9,8 @@
 | **Current Phase** | Phase 2: Optimization |
 | Total experiments | 13 |
 | Baselines complete | 9 / 9 |
-| Improvements kept | 2 |
-| Discarded | 2 |
+| Improvements kept | 1 |
+| Discarded | 3 |
 | Crashes | 0 |
 | Total GPU time | 636 min (10.6 hrs) |
 
@@ -75,7 +75,7 @@
 | 10 | `02f0c05` | diffusion | PushT-v0 | 10.0% | 39.5 | **KEEP** | lr=5e-5 |
 | 11 | `dde6bcb` | diffusion | PushT-v0 | 12.0% | 47.1 | discard | lr=5e-4 |
 | 12 | `a545da1` | diffusion | PushT-v0 | 24.0% | 61.1 | discard | batch_size=32 |
-| 13 | `b3328dd` | act | PushT-v0 | 2.0% | 28.7 | **KEEP** | lr=1e-3 |
+| 13 | `b3328dd` | act | PushT-v0 | 2.0% | 28.7 | discard | lr=1e-3 |
 
 </details>
 
