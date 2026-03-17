@@ -26,7 +26,7 @@ VENV_PYTHON = "/workspace/venv/bin/python"
 # ============================================================
 
 # ---- Policy ----
-POLICY_TYPE = "act"
+POLICY_TYPE = "diffusion"
 
 # ---- Task ----
 DATASET_REPO_ID = "lerobot/pusht"
@@ -47,13 +47,13 @@ SAVE_FREQ = 10000
 TIME_BUDGET = 1800
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/act_pusht_v0_20260316_021808"
+OUTPUT_DIR = "outputs/diffusion_pusht_v0_20260317_030709"
 
 # ---- Policy-Specific Overrides ----
-POLICY_OVERRIDES = {'n_encoder_layers': 6}
+POLICY_OVERRIDES = {}
 
 # ---- Optimizer Overrides ----
-OPTIMIZER_OVERRIDES = {}
+OPTIMIZER_OVERRIDES = {'lr': 0.001}
 
 # ---- Scheduler Overrides ----
 SCHEDULER_OVERRIDES = {}
