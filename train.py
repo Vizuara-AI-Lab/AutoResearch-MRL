@@ -19,6 +19,8 @@ import signal
 import argparse
 from pathlib import Path
 
+VENV_PYTHON = "/workspace/venv/bin/python"
+
 # ============================================================
 # CONFIGURATION — The AI agent modifies this section
 # ============================================================
@@ -72,7 +74,7 @@ def build_command(smoke_test=False):
     output_dir = "outputs/smoke_test" if smoke_test else OUTPUT_DIR
 
     cmd = [
-        sys.executable, "-m", "lerobot.scripts.lerobot_train",
+        VENV_PYTHON, "-m", "lerobot.scripts.lerobot_train",
         f"--policy.type={POLICY_TYPE}",
         f"--policy.repo_id=autoresearch-mrl/{POLICY_TYPE}_{ENV_TASK.lower().replace('-', '_')}",
         f"--policy.push_to_hub=false",
