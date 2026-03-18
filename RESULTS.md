@@ -1,18 +1,18 @@
 # AutoResearch-MRL: Live Results
 
-> Last updated: **2026-03-18 07:12 UTC** | auto-generated every 5 min
+> Last updated: **2026-03-18 07:13 UTC** | auto-generated every 5 min
 
 ## Summary
 
 | Metric | Value |
 |--------|-------|
 | **Current Phase** | Phase 2: Optimization |
-| Total experiments | 18 |
+| Total experiments | 19 |
 | Baselines complete | 9 / 9 |
-| Improvements kept | 3 |
+| Improvements kept | 4 |
 | Discarded | 6 |
 | Crashes | 0 |
-| Total GPU time | 842 min (14.0 hrs) |
+| Total GPU time | 877 min (14.6 hrs) |
 
 ## Policy Comparison
 
@@ -81,6 +81,7 @@
 | 16 | `e69cd48` | diffusion | PushT-v0 | 28.0% | 89.9 | **KEEP** | horizon=32 |
 | 17 | `b32624c` | act | PushT-v0 | 6.0% | 53.4 | discard | chunk_size=50 |
 | 18 | `60851e1` | diffusion | AlohaTransferCube-v0 | 4.0% | 14.1 | **KEEP** | lr=5e-4 |
+| 19 | `6a57f7b` | diffusion | PushT-v0 | 18.0% | 39.2 | **KEEP** | lr=1e-3 |
 
 </details>
 

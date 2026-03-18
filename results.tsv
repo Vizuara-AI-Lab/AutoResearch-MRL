@@ -17,3 +17,4 @@ b3328dd	act	PushT-v0	2.00	28.735	0.0	35.1	17103	discard	lr=1e-3
 e69cd48	diffusion	PushT-v0	28.00	89.909	0.0	35.1	23213	keep	horizon=32
 b32624c	act	PushT-v0	6.00	53.366	0.0	35.1	26348	discard	chunk_size=50
 60851e1	diffusion	AlohaTransferCube-v0	4.00	14.140	0.0	65.1	10858	keep	lr=5e-4
+6a57f7b	diffusion	PushT-v0	18.00	39.156	0.0	35.1	28071	keep	lr=1e-3
