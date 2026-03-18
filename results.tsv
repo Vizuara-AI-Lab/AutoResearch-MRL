@@ -13,3 +13,7 @@ dde6bcb	diffusion	PushT-v0	12.00	47.113	0.0	35.1	28369	discard	lr=5e-4
 a545da1	diffusion	PushT-v0	24.00	61.058	0.0	35.1	33215	discard	batch_size=32
 b3328dd	act	PushT-v0	2.00	28.735	0.0	35.1	17103	discard	lr=1e-3
 620cd82	act	PushT-v0	8.00	60.078	0.0	35.1	38277	discard	chunk_size=20
+4b2e795	diffusion	PushT-v0	22.00	64.368	0.0	35.1	30000	discard	n_obs_steps=1
+e69cd48	diffusion	PushT-v0	28.00	89.909	0.0	35.1	23213	discard	horizon=32
+b32624c	act	PushT-v0	6.00	53.366	0.0	35.1	26348	discard	chunk_size=50
+60851e1	diffusion	AlohaTransferCube-v0	4.00	14.140	0.0	65.1	10858	discard	lr=5e-4
