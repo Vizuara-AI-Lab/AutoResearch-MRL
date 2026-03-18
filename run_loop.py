@@ -34,6 +34,7 @@ from typing import Optional
 # ============================================================
 
 REPO_DIR = Path(__file__).parent.resolve()
+VENV_PYTHON = "/workspace/venv/bin/python"
 RESULTS_FILE = REPO_DIR / "results.tsv"
 TRAIN_SCRIPT = REPO_DIR / "train.py"
 LOG_FILE = REPO_DIR / "run.log"
@@ -442,7 +443,7 @@ def run_experiment(policy, task_id, description, status_type,
     try:
         with open(wrapper_log, "w") as wlog:
             proc = subprocess.Popen(
-                [sys.executable, str(TRAIN_SCRIPT)],
+                [VENV_PYTHON, str(TRAIN_SCRIPT)],
                 stdout=wlog,
                 stderr=subprocess.STDOUT,
                 cwd=REPO_DIR,

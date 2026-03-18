@@ -19,21 +19,23 @@ import signal
 import argparse
 from pathlib import Path
 
+VENV_PYTHON = "/workspace/venv/bin/python"
+
 # ============================================================
 # CONFIGURATION — The AI agent modifies this section
 # ============================================================
 
 # ---- Policy ----
-POLICY_TYPE = "act"
+POLICY_TYPE = "diffusion"
 
 # ---- Task ----
-DATASET_REPO_ID = "lerobot/pusht"
-ENV_TYPE = "pusht"
-ENV_TASK = "PushT-v0"
+DATASET_REPO_ID = "lerobot/aloha_sim_transfer_cube_human"
+ENV_TYPE = "aloha"
+ENV_TASK = "AlohaTransferCube-v0"
 
 # ---- Training ----
-TRAINING_STEPS = 50000
-BATCH_SIZE = 64
+TRAINING_STEPS = 100000
+BATCH_SIZE = 32
 SEED = 1000
 
 # ---- Evaluation ----
@@ -42,13 +44,13 @@ EVAL_N_EPISODES = 50
 SAVE_FREQ = 10000
 
 # ---- Time Budget (seconds) ----
-TIME_BUDGET = 1800
+TIME_BUDGET = 3600
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/act_pusht_v0_20260316_021808"
+OUTPUT_DIR = "outputs/diffusion_alohatransfercube_v0_20260317_202434"
 
 # ---- Policy-Specific Overrides ----
-POLICY_OVERRIDES = {'n_encoder_layers': 6}
+POLICY_OVERRIDES = {}
 
 # ---- Optimizer Overrides ----
 OPTIMIZER_OVERRIDES = {}
@@ -72,7 +74,7 @@ def build_command(smoke_test=False):
     output_dir = "outputs/smoke_test" if smoke_test else OUTPUT_DIR
 
     cmd = [
-        sys.executable, "-m", "lerobot.scripts.lerobot_train",
+        VENV_PYTHON, "-m", "lerobot.scripts.lerobot_train",
         f"--policy.type={POLICY_TYPE}",
         f"--policy.repo_id=autoresearch-mrl/{POLICY_TYPE}_{ENV_TASK.lower().replace('-', '_')}",
         f"--policy.push_to_hub=false",

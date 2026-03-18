@@ -1,0 +1,209 @@
+[2026-03-17 03:07:09] [INFO] ============================================================
+[2026-03-17 03:07:09] [INFO] AutoResearch-MRL: Autonomous Experiment Loop
+[2026-03-17 03:07:09] [INFO] Started: 2026-03-17 03:07:09
+[2026-03-17 03:07:09] [INFO] ============================================================
+[2026-03-17 03:07:09] [INFO] GPU: NVIDIA A100-SXM4-80GB, 81920 MiB
+[2026-03-17 03:07:09] [INFO] ============================================================
+[2026-03-17 03:07:09] [INFO] PHASE 1: BASELINE SWEEP
+[2026-03-17 03:07:09] [INFO] ============================================================
+[2026-03-17 03:07:09] [INFO] Skipping diffusion/PushT-v0 — baseline already exists
+[2026-03-17 03:07:09] [INFO] Skipping act/PushT-v0 — baseline already exists
+[2026-03-17 03:07:09] [INFO] Skipping vqbet/PushT-v0 — baseline already exists
+[2026-03-17 03:07:09] [INFO] Skipping diffusion/AlohaTransferCube-v0 — baseline already exists
+[2026-03-17 03:07:09] [INFO] Skipping act/AlohaTransferCube-v0 — baseline already exists
+[2026-03-17 03:07:09] [INFO] Skipping vqbet/AlohaTransferCube-v0 — baseline already exists
+[2026-03-17 03:07:09] [INFO] Skipping diffusion/AlohaInsertion-v0 — baseline already exists
+[2026-03-17 03:07:09] [INFO] Skipping act/AlohaInsertion-v0 — baseline already exists
+[2026-03-17 03:07:09] [INFO] Skipping vqbet/AlohaInsertion-v0 — baseline already exists
+[2026-03-17 03:07:09] [INFO] Generated baseline report: /workspace/AutoResearch-MRL/reports/01_baselines.md
+[2026-03-17 03:07:09] [INFO] Phase 1 complete!
+[2026-03-17 03:07:09] [INFO] ============================================================
+[2026-03-17 03:07:09] [INFO] PHASE 2: OPTIMIZATION LOOP
+[2026-03-17 03:07:09] [INFO] ============================================================
+[2026-03-17 03:07:09] [INFO] 
+Optimizing: diffusion on PushT-v0
+[2026-03-17 03:07:09] [INFO] ----------------------------------------
+[2026-03-17 03:07:09] [INFO] Current best: 10.0%
+[2026-03-17 03:07:09] [INFO] Skipping (already tried): lr=5e-5
+[2026-03-17 03:07:09] [INFO] Skipping (already tried): lr=5e-4
+[2026-03-17 03:07:09] [INFO] Starting: diffusion/PushT-v0 — lr=1e-3
+[2026-03-17 03:07:09] [INFO] Training diffusion on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 03:42:14] [INFO] Recorded: keep | diffusion/PushT-v0 | success=10.0% | lr=1e-3
+[2026-03-17 03:42:14] [INFO] Finished: success_rate=10.0% | time=35.1min | vram=0.0GB
+[2026-03-17 03:42:14] [INFO] No improvement: 10.0% vs best 10.0%
+[2026-03-17 03:42:14] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 03:42:14] [INFO] Skipping (already tried): batch_size=32
+[2026-03-17 03:42:14] [INFO] Starting: diffusion/PushT-v0 — batch_size=128
+[2026-03-17 03:42:14] [INFO] Training diffusion on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 04:17:20] [INFO] Recorded: keep | diffusion/PushT-v0 | success=0.0% | batch_size=128
+[2026-03-17 04:17:20] [INFO] Finished: success_rate=0.0% | time=35.1min | vram=0.0GB
+[2026-03-17 04:17:20] [INFO] No improvement: 0.0% vs best 10.0%
+[2026-03-17 04:17:20] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 04:17:20] [INFO] Starting: diffusion/PushT-v0 — n_obs_steps=1
+[2026-03-17 04:17:20] [INFO] Training diffusion on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 04:52:25] [INFO] Recorded: keep | diffusion/PushT-v0 | success=22.0% | n_obs_steps=1
+[2026-03-17 04:52:25] [INFO] Finished: success_rate=22.0% | time=35.1min | vram=0.0GB
+[2026-03-17 04:52:25] [INFO] IMPROVEMENT: 10.0% -> 22.0% (+12.0%)
+[2026-03-17 04:52:25] [INFO] Starting: diffusion/PushT-v0 — n_obs_steps=4
+[2026-03-17 04:52:25] [INFO] Training diffusion on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 05:27:30] [INFO] Recorded: keep | diffusion/PushT-v0 | success=8.0% | n_obs_steps=4
+[2026-03-17 05:27:30] [INFO] Finished: success_rate=8.0% | time=35.1min | vram=0.0GB
+[2026-03-17 05:27:30] [INFO] No improvement: 8.0% vs best 22.0%
+[2026-03-17 05:27:30] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 05:27:30] [INFO] Starting: diffusion/PushT-v0 — horizon=8
+[2026-03-17 05:27:31] [INFO] Training diffusion on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 06:02:36] [INFO] Recorded: keep | diffusion/PushT-v0 | success=2.0% | horizon=8
+[2026-03-17 06:02:36] [INFO] Finished: success_rate=2.0% | time=35.1min | vram=0.0GB
+[2026-03-17 06:02:36] [INFO] No improvement: 2.0% vs best 22.0%
+[2026-03-17 06:02:36] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 06:02:36] [INFO] Starting: diffusion/PushT-v0 — horizon=32
+[2026-03-17 06:02:36] [INFO] Training diffusion on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 06:37:41] [INFO] Recorded: keep | diffusion/PushT-v0 | success=28.0% | horizon=32
+[2026-03-17 06:37:41] [INFO] Finished: success_rate=28.0% | time=35.1min | vram=0.0GB
+[2026-03-17 06:37:41] [INFO] IMPROVEMENT: 22.0% -> 28.0% (+6.0%)
+[2026-03-17 06:37:41] [INFO] Starting: diffusion/PushT-v0 — smaller_unet down_dims=[256,512]
+[2026-03-17 06:37:41] [INFO] Training diffusion on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 07:12:47] [INFO] Recorded: keep | diffusion/PushT-v0 | success=12.0% | smaller_unet down_dims=[256,512]
+[2026-03-17 07:12:47] [INFO] Finished: success_rate=12.0% | time=35.1min | vram=0.0GB
+[2026-03-17 07:12:47] [INFO] No improvement: 12.0% vs best 28.0%
+[2026-03-17 07:12:47] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 07:12:47] [INFO] Starting: diffusion/PushT-v0 — larger_unet down_dims=[512,1024,2048]
+[2026-03-17 07:12:47] [INFO] Training diffusion on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 07:47:52] [INFO] Recorded: keep | diffusion/PushT-v0 | success=2.0% | larger_unet down_dims=[512,1024,2048]
+[2026-03-17 07:47:52] [INFO] Finished: success_rate=2.0% | time=35.1min | vram=0.0GB
+[2026-03-17 07:47:52] [INFO] No improvement: 2.0% vs best 28.0%
+[2026-03-17 07:47:52] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 07:47:52] [INFO] Starting: diffusion/PushT-v0 — num_train_timesteps=50
+[2026-03-17 07:47:52] [INFO] Training diffusion on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 08:22:57] [INFO] Recorded: keep | diffusion/PushT-v0 | success=14.0% | num_train_timesteps=50
+[2026-03-17 08:22:57] [INFO] Finished: success_rate=14.0% | time=35.1min | vram=0.0GB
+[2026-03-17 08:22:57] [INFO] No improvement: 14.0% vs best 28.0%
+[2026-03-17 08:22:57] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 08:22:57] [INFO] Starting: diffusion/PushT-v0 — num_train_timesteps=200
+[2026-03-17 08:22:58] [INFO] Training diffusion on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 08:58:03] [INFO] Recorded: keep | diffusion/PushT-v0 | success=10.0% | num_train_timesteps=200
+[2026-03-17 08:58:03] [INFO] Finished: success_rate=10.0% | time=35.1min | vram=0.0GB
+[2026-03-17 08:58:03] [INFO] No improvement: 10.0% vs best 28.0%
+[2026-03-17 08:58:03] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 08:58:03] [INFO] Starting: diffusion/PushT-v0 — resnet50 backbone
+[2026-03-17 08:58:03] [INFO] Training diffusion on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 09:33:08] [INFO] Recorded: keep | diffusion/PushT-v0 | success=10.0% | resnet50 backbone
+[2026-03-17 09:33:08] [INFO] Finished: success_rate=10.0% | time=35.1min | vram=0.0GB
+[2026-03-17 09:33:08] [INFO] No improvement: 10.0% vs best 28.0%
+[2026-03-17 09:33:08] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 09:33:08] [INFO] Converged: 5 consecutive discards. Moving on.
+[2026-03-17 09:33:08] [INFO] Optimization complete for diffusion/PushT-v0. Best: 28.0%
+[2026-03-17 09:33:08] [INFO] 
+Optimizing: act on PushT-v0
+[2026-03-17 09:33:08] [INFO] ----------------------------------------
+[2026-03-17 09:33:08] [INFO] Current best: 0.0%
+[2026-03-17 09:33:08] [INFO] Starting: act/PushT-v0 — lr=1e-4
+[2026-03-17 09:33:08] [INFO] Training act on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 10:08:14] [INFO] Recorded: keep | act/PushT-v0 | success=0.0% | lr=1e-4
+[2026-03-17 10:08:14] [INFO] Finished: success_rate=0.0% | time=35.1min | vram=0.0GB
+[2026-03-17 10:08:14] [INFO] No improvement: 0.0% vs best 0.0%
+[2026-03-17 10:08:14] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 10:08:14] [INFO] Starting: act/PushT-v0 — lr=5e-6
+[2026-03-17 10:08:14] [INFO] Training act on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 10:43:19] [INFO] Recorded: keep | act/PushT-v0 | success=0.0% | lr=5e-6
+[2026-03-17 10:43:19] [INFO] Finished: success_rate=0.0% | time=35.1min | vram=0.0GB
+[2026-03-17 10:43:19] [INFO] No improvement: 0.0% vs best 0.0%
+[2026-03-17 10:43:19] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 10:43:19] [INFO] Skipping (already tried): lr=1e-3
+[2026-03-17 10:43:19] [INFO] Starting: act/PushT-v0 — chunk_size=50
+[2026-03-17 10:43:19] [INFO] Training act on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 11:18:24] [INFO] Recorded: keep | act/PushT-v0 | success=6.0% | chunk_size=50
+[2026-03-17 11:18:24] [INFO] Finished: success_rate=6.0% | time=35.1min | vram=0.0GB
+[2026-03-17 11:18:24] [INFO] IMPROVEMENT: 0.0% -> 6.0% (+6.0%)
+[2026-03-17 11:18:24] [INFO] Skipping (already tried): chunk_size=20
+[2026-03-17 11:18:24] [INFO] Starting: act/PushT-v0 — dim_model=256
+[2026-03-17 11:18:24] [INFO] Training act on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 11:53:30] [INFO] Recorded: keep | act/PushT-v0 | success=0.0% | dim_model=256
+[2026-03-17 11:53:30] [INFO] Finished: success_rate=0.0% | time=35.1min | vram=0.0GB
+[2026-03-17 11:53:30] [INFO] No improvement: 0.0% vs best 6.0%
+[2026-03-17 11:53:30] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 11:53:30] [INFO] Starting: act/PushT-v0 — dim_model=768
+[2026-03-17 11:53:30] [INFO] Training act on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 12:28:35] [INFO] Recorded: keep | act/PushT-v0 | success=0.0% | dim_model=768
+[2026-03-17 12:28:35] [INFO] Finished: success_rate=0.0% | time=35.1min | vram=0.0GB
+[2026-03-17 12:28:35] [INFO] No improvement: 0.0% vs best 6.0%
+[2026-03-17 12:28:35] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 12:28:35] [INFO] Starting: act/PushT-v0 — deeper encoder n_encoder_layers=6
+[2026-03-17 12:28:35] [INFO] Training act on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 13:03:40] [INFO] Recorded: keep | act/PushT-v0 | success=0.0% | deeper encoder n_encoder_layers=6
+[2026-03-17 13:03:40] [INFO] Finished: success_rate=0.0% | time=35.1min | vram=0.0GB
+[2026-03-17 13:03:40] [INFO] No improvement: 0.0% vs best 6.0%
+[2026-03-17 13:03:40] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 13:03:40] [INFO] Starting: act/PushT-v0 — fewer decoder n_decoder_layers=4
+[2026-03-17 13:03:41] [INFO] Training act on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 13:38:46] [INFO] Recorded: keep | act/PushT-v0 | success=0.0% | fewer decoder n_decoder_layers=4
+[2026-03-17 13:38:46] [INFO] Finished: success_rate=0.0% | time=35.1min | vram=0.0GB
+[2026-03-17 13:38:46] [INFO] No improvement: 0.0% vs best 6.0%
+[2026-03-17 13:38:46] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 13:38:46] [INFO] Starting: act/PushT-v0 — no VAE
+[2026-03-17 13:38:46] [INFO] Training act on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 14:13:51] [INFO] Recorded: keep | act/PushT-v0 | success=0.0% | no VAE
+[2026-03-17 14:13:51] [INFO] Finished: success_rate=0.0% | time=35.1min | vram=0.0GB
+[2026-03-17 14:13:51] [INFO] No improvement: 0.0% vs best 6.0%
+[2026-03-17 14:13:51] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 14:13:51] [INFO] Converged: 5 consecutive discards. Moving on.
+[2026-03-17 14:13:51] [INFO] Optimization complete for act/PushT-v0. Best: 6.0%
+[2026-03-17 14:13:51] [INFO] 
+Optimizing: vqbet on PushT-v0
+[2026-03-17 14:13:51] [INFO] ----------------------------------------
+[2026-03-17 14:13:51] [INFO] Current best: 0.0%
+[2026-03-17 14:13:51] [INFO] Starting: vqbet/PushT-v0 — lr=5e-5
+[2026-03-17 14:13:51] [INFO] Training vqbet on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 14:48:56] [INFO] Recorded: keep | vqbet/PushT-v0 | success=0.0% | lr=5e-5
+[2026-03-17 14:48:56] [INFO] Finished: success_rate=0.0% | time=35.1min | vram=0.0GB
+[2026-03-17 14:48:56] [INFO] No improvement: 0.0% vs best 0.0%
+[2026-03-17 14:48:57] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 14:48:57] [INFO] Starting: vqbet/PushT-v0 — lr=5e-4
+[2026-03-17 14:48:57] [INFO] Training vqbet on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 15:24:02] [INFO] Recorded: keep | vqbet/PushT-v0 | success=0.0% | lr=5e-4
+[2026-03-17 15:24:02] [INFO] Finished: success_rate=0.0% | time=35.1min | vram=0.0GB
+[2026-03-17 15:24:02] [INFO] No improvement: 0.0% vs best 0.0%
+[2026-03-17 15:24:02] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 15:24:02] [INFO] Starting: vqbet/PushT-v0 — vqvae_n_embed=256
+[2026-03-17 15:24:02] [INFO] Training vqbet on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 15:59:07] [INFO] Recorded: keep | vqbet/PushT-v0 | success=0.0% | vqvae_n_embed=256
+[2026-03-17 15:59:07] [INFO] Finished: success_rate=0.0% | time=35.1min | vram=0.0GB
+[2026-03-17 15:59:07] [INFO] No improvement: 0.0% vs best 0.0%
+[2026-03-17 15:59:07] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 15:59:07] [INFO] Starting: vqbet/PushT-v0 — vqvae_n_embed=1024
+[2026-03-17 15:59:07] [INFO] Training vqbet on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 16:34:13] [INFO] Recorded: keep | vqbet/PushT-v0 | success=0.0% | vqvae_n_embed=1024
+[2026-03-17 16:34:13] [INFO] Finished: success_rate=0.0% | time=35.1min | vram=0.0GB
+[2026-03-17 16:34:13] [INFO] No improvement: 0.0% vs best 0.0%
+[2026-03-17 16:34:13] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 16:34:13] [INFO] Starting: vqbet/PushT-v0 — gpt_n_layer=4
+[2026-03-17 16:34:13] [INFO] Training vqbet on PushT-v0 (50000 steps, budget=1800s)...
+[2026-03-17 17:09:18] [INFO] Recorded: keep | vqbet/PushT-v0 | success=0.0% | gpt_n_layer=4
+[2026-03-17 17:09:18] [INFO] Finished: success_rate=0.0% | time=35.1min | vram=0.0GB
+[2026-03-17 17:09:18] [INFO] No improvement: 0.0% vs best 0.0%
+[2026-03-17 17:09:18] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 17:09:18] [INFO] Converged: 5 consecutive discards. Moving on.
+[2026-03-17 17:09:18] [INFO] Optimization complete for vqbet/PushT-v0. Best: 0.0%
+[2026-03-17 17:09:18] [INFO] 
+Optimizing: diffusion on AlohaTransferCube-v0
+[2026-03-17 17:09:18] [INFO] ----------------------------------------
+[2026-03-17 17:09:18] [INFO] Current best: 2.0%
+[2026-03-17 17:09:18] [INFO] Starting: diffusion/AlohaTransferCube-v0 — lr=5e-5
+[2026-03-17 17:09:18] [INFO] Training diffusion on AlohaTransferCube-v0 (100000 steps, budget=3600s)...
+[2026-03-17 18:14:23] [INFO] Recorded: keep | diffusion/AlohaTransferCube-v0 | success=0.0% | lr=5e-5
+[2026-03-17 18:14:23] [INFO] Finished: success_rate=0.0% | time=65.1min | vram=0.0GB
+[2026-03-17 18:14:23] [INFO] No improvement: 0.0% vs best 2.0%
+[2026-03-17 18:14:23] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 18:14:23] [INFO] Starting: diffusion/AlohaTransferCube-v0 — lr=5e-4
+[2026-03-17 18:14:24] [INFO] Training diffusion on AlohaTransferCube-v0 (100000 steps, budget=3600s)...
+[2026-03-17 19:19:29] [INFO] Recorded: keep | diffusion/AlohaTransferCube-v0 | success=4.0% | lr=5e-4
+[2026-03-17 19:19:29] [INFO] Finished: success_rate=4.0% | time=65.1min | vram=0.0GB
+[2026-03-17 19:19:29] [INFO] IMPROVEMENT: 2.0% -> 4.0% (+2.0%)
+[2026-03-17 19:19:29] [INFO] Starting: diffusion/AlohaTransferCube-v0 — lr=1e-3
+[2026-03-17 19:19:29] [INFO] Training diffusion on AlohaTransferCube-v0 (100000 steps, budget=3600s)...
+[2026-03-17 20:24:34] [INFO] Recorded: keep | diffusion/AlohaTransferCube-v0 | success=0.0% | lr=1e-3
+[2026-03-17 20:24:34] [INFO] Finished: success_rate=0.0% | time=65.1min | vram=0.0GB
+[2026-03-17 20:24:34] [INFO] No improvement: 0.0% vs best 4.0%
+[2026-03-17 20:24:34] [INFO] Reverted last commit (experiment discarded)
+[2026-03-17 20:24:34] [INFO] Starting: diffusion/AlohaTransferCube-v0 — batch_size=32
+[2026-03-17 20:24:34] [INFO] Training diffusion on AlohaTransferCube-v0 (100000 steps, budget=3600s)...
