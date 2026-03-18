@@ -244,7 +244,7 @@ def get_best_result(policy, task):
     results = load_results()
     best = 0.0
     for r in results:
-        if r["policy"] == policy and r["task"] == task and r["status"] in ("baseline", "keep"):
+        if r["policy"] == policy and r["task"] == task and r["status"] in ("baseline", "keep", "discard"):
             best = max(best, r["success_rate"])
     return best
 
@@ -1000,7 +1000,7 @@ def run_phase4():
 
     for policy, task_id in BASELINE_EXPERIMENTS:
         pair_results = [r for r in results if r["policy"] == policy and r["task"] == task_id
-                       and r["status"] in ("baseline", "keep")]
+                       and r["status"] in ("baseline", "keep", "discard")]
         if pair_results:
             best = max(pair_results, key=lambda r: r["success_rate"])
             lines.append(f"| {policy} | {task_id} | {best['success_rate']:.1f} | {best['description']} |")
