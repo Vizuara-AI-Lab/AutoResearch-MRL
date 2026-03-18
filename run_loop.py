@@ -547,6 +547,13 @@ def run_experiment(policy, task_id, description, status_type,
     log(f"Finished: success_rate={metrics['success_rate']:.1f}% | "
         f"time={elapsed/60:.1f}min | vram={vram_gb:.1f}GB")
 
+    # Auto-cleanup output dirs to prevent disk filling up
+    outputs_dir = REPO_DIR / "outputs"
+    if outputs_dir.exists():
+        for d in outputs_dir.iterdir():
+            if d.is_dir():
+                shutil.rmtree(d, ignore_errors=True)
+        log("Cleaned up output directories")
     return metrics["success_rate"], commit_hash
 
 
