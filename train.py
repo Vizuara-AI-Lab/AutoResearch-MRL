@@ -29,13 +29,13 @@ VENV_PYTHON = "/workspace/venv/bin/python"
 POLICY_TYPE = "diffusion"
 
 # ---- Task ----
-DATASET_REPO_ID = "lerobot/aloha_sim_transfer_cube_human"
-ENV_TYPE = "aloha"
-ENV_TASK = "AlohaTransferCube-v0"
+DATASET_REPO_ID = "lerobot/pusht"
+ENV_TYPE = "pusht"
+ENV_TASK = "PushT-v0"
 
 # ---- Training ----
-TRAINING_STEPS = 100000
-BATCH_SIZE = 32
+TRAINING_STEPS = 50000
+BATCH_SIZE = 64
 SEED = 1000
 
 # ---- Evaluation ----
@@ -44,16 +44,16 @@ EVAL_N_EPISODES = 50
 SAVE_FREQ = 10000
 
 # ---- Time Budget (seconds) ----
-TIME_BUDGET = 3600
+TIME_BUDGET = 1800
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/diffusion_alohatransfercube_v0_20260317_202434"
+OUTPUT_DIR = "outputs/diffusion_pusht_v0_20260318_063835"
 
 # ---- Policy-Specific Overrides ----
 POLICY_OVERRIDES = {}
 
 # ---- Optimizer Overrides ----
-OPTIMIZER_OVERRIDES = {}
+OPTIMIZER_OVERRIDES = {'lr': 0.001}
 
 # ---- Scheduler Overrides ----
 SCHEDULER_OVERRIDES = {}
