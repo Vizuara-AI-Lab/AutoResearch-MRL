@@ -35,7 +35,7 @@ ENV_TASK = "PushT-v0"
 
 # ---- Training ----
 TRAINING_STEPS = 50000
-BATCH_SIZE = 64
+BATCH_SIZE = 128
 SEED = 1000
 
 # ---- Evaluation ----
@@ -47,13 +47,13 @@ SAVE_FREQ = 10000
 TIME_BUDGET = 1800
 
 # ---- Output ----
-OUTPUT_DIR = "outputs/diffusion_pusht_v0_20260318_063835"
+OUTPUT_DIR = "outputs/diffusion_pusht_v0_20260318_071342"
 
 # ---- Policy-Specific Overrides ----
 POLICY_OVERRIDES = {}
 
 # ---- Optimizer Overrides ----
-OPTIMIZER_OVERRIDES = {'lr': 0.001}
+OPTIMIZER_OVERRIDES = {}
 
 # ---- Scheduler Overrides ----
 SCHEDULER_OVERRIDES = {}
